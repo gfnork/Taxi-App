@@ -1,0 +1,32 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+
+    <button class="button button-block button-positive" ng-click="start()" ng-show="!started">
+      Fahrt starten
+    </button>
+
+    <button class="button button-block button-assertive" ng-click="stop()" ng-show="started">
+      Fahrt stoppen
+    </button>
+
+
+    <button class="button button-block button-assertive" ng-click="reset()" ng-show="stoped">
+      Neue Fahrt
+    </button>
+
+    <div class="card" ng-show="started || stoped">
+      <div class="item item-divider">
+        Fahrt läuft
+      </div>
+      <div class="item item-text-wrap">
+        {{time.elapsed}}
+      </div>
+
+    </div>
+
+    <button class="button button-block button-positive" ng-click="send()" ng-show="stoped">
+      Fahrt übertragen
+    </button>
+
+  </ion-content>
+</ion-view>
